@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Radio Profesional</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class='navbar'>
+  <div class='logo'>
+    <img src='assets/Logo Radio USM.jpeg' alt='Logo' style='height:50px; margin-right:10px;'>
+    RADIO USM JAYA FM
+  </div>
+  <ul>
+    <li><a href='index.html'>Home</a></li>
+    <li><a href='tentang.html'>Tentang</a></li>
+    <li><a href='program.html'>Program</a></li>
+    <li><a href='penyiar.html'>Penyiar</a></li>
+    <li><a href="#" id="stream-btn" class='btn' data-stream="https://stream.tujuhcahaya.com/listen/radio_usm_jaya_semarang/radio.mp3">Streaming Now</a></li>
+  </ul>
+</div>
+
+<!-- Program Acara Modal -->
+<div id="scheduleModal" class="modal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="scheduleTitle">
+    <div class="modal-header">
+      <h3 id="scheduleTitle">Program Acara - Jadwal Siaran</h3>
+      <button class="close" id="scheduleClose" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <p class="pricelist-intro">Jadwal siaran harian dan akhir pekan Radio USM JAYA FM</p>
+      <div id="scheduleContainer" class="pricing-grid">
+        <!-- Schedule will be rendered here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const openScheduleBtn = document.getElementById('openSchedule');
+  const scheduleModal = document.getElementById('scheduleModal');
+  const scheduleClose = document.getElementById('scheduleClose');
+
+  const scheduleData = {
+    WEEKDAY: [
+      { title: 'KELAS PAGI', time: '06:00-10:00', segmen: 'Duel Lagu, Psicorner', kategori: 'New Rilease 2020-Sekarang' },
+      { title: 'USM Update', time: '10:00-12:00', segmen: 'Talkshow sivitas akademi', kategori: 'New Rilease 2020-Sekarang' },
+      { title: 'Kantin USM', time: '12:00-13:00', segmen: 'Talkshow UMKM', kategori: 'Lagu Tahun 90an' },
+      { title: 'KRS [Kita Rehat Sejenak]', time: '13:00-16:00', segmen: 'Soft News', kategori: 'Lagu Tahun 90an' },
+      { title: 'Kelas Sore', time: '16:00-20:00', segmen: 'Games "alamat palsu", Tebak Lagu, Crazy Talk', kategori: 'New Release 2020-sekarang' }
+    ],
+    WEEKEND: [
+      { title: 'Tugu Muda', time: '06:00-10:00', segmen: 'Hallyusination, Psicorner', kategori: 'New Rilease 2020-sekarang, KPop' },
+      { title: 'Lumpia', time: '10:00-12:00', segmen: 'Soft News+Tips n Trick', kategori: 'Lagu Hits' },
+      { title: 'LAwang Sewu', time: '13:00-16:00', segmen: 'Soft News', kategori: 'Lagu Hits' },
+      { title: 'Kota LAma', time: '16:00-20:00', segmen: 'Movie Talk', kategori: 'New Release 2020- Sekarang' }
+    ]
+  };
+
+  function renderSchedule(){
+    const container = document.getElementById('scheduleContainer');
+    if(!container) return;
+
+    const makeCard = (item) => `
+      <div class="schedule-card">
+        <div class="schedule-title">${item.title}</div>
+        <div class="schedule-time">${item.time}</div>
+        <div class="schedule-segmen"><strong>Segmen:</strong> ${item.segmen}</div>
+        <div class="schedule-kategori"><strong>Kategori:</strong> ${item.kategori}</div>
+      </div>
+    `;
+
+    const makeColHtml = (items) => items.map(i => makeCard(i)).join('');
+
+    container.innerHTML = `
+      <div class="schedule-wrapper">
+        <div class="schedule-section">
+          <h4 class="schedule-header">🌞 WEEKDAY (Senin - Jumat)</h4>
+          <div class="schedule-items full-width">
+            ${makeColHtml(scheduleData.WEEKDAY)}
+          </div>
+        </div>
+        <div class="schedule-section">
+          <h4 class="schedule-header">🌙 WEEKEND (Sabtu - Minggu)</h4>
+          <div class="schedule-items full-width">
+            ${makeColHtml(scheduleData.WEEKEND)}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  if(openScheduleBtn && scheduleModal){
+    openScheduleBtn.addEventListener('click', function(){
+      renderSchedule();
+      scheduleModal.classList.add('open');
+      scheduleModal.setAttribute('aria-hidden','false');
+    });
+  }
+
+  if(scheduleClose){
+    scheduleClose.addEventListener('click', function(){
+      scheduleModal.classList.remove('open');
+      scheduleModal.setAttribute('aria-hidden','true');
+    });
+  }
+
+  if(scheduleModal){
+    scheduleModal.addEventListener('click', function(e){ if(e.target === scheduleModal){ scheduleModal.classList.remove('open'); scheduleModal.setAttribute('aria-hidden','true'); } });
+  }
+});
+</script>
+
+<div class="section team-section">
+  <div class="team-container newspaper">
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Radio Profesional</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="background-image: url('assets/background\ web.png'); background-size: cover; background-repeat: no-repeat; background-position: center; background-attachment: fixed;">
+  <!-- Sisanya kode HTML Anda tetap sama -->
+  <div class='navbar'>
+    <!-- Konten navbar -->
+  </div>
+  <!-- Dan seterusnya -->
+</body>
+</html>
+    <div class="team-info">
+      <h2>Tentang Kami</h2>
+      <div class="about-content">
+        <p><strong>USM Jaya FM</strong> mulai mengudara pada tahun 2017. Pada 26 Juli 2022, melalui keputusan Yayasan Alumni UNDIP, dilakukan rebranding terhadap stasiun sehingga terjadi perubahan pada struktur pengelolaan dan program siaran.</p>
+        <ul>
+        <p>Kami berkomitmen menghasilkan siaran yang informatif, menghibur, dan relevan bagi pendengar di Semarang dan sekitarnya, serta memajukan keterlibatan komunitas melalui platform digital kami.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Pricelist trigger button (pricelist moved to modal) -->
+<div class="pricelist-trigger" style="text-align:center;margin:20px 0;display:flex;gap:12px;justify-content:center;">
+  <button id="openPricelist" class="price-btn">Lihat Brosur Harga Iklan</button>
+  <button id="openSchedule" class="price-btn">Program Acara</button>
+  <button id="openAppsTrigger" class="price-btn">Daftar Aplikasi</button>
+</div>
+
+<!-- Pricelist Modal (hidden by default) -->
+<div id="pricelistModal" class="modal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="pricelistTitle">
+    <div class="modal-header">
+      <h3 id="pricelistTitle">Brosur Harga Iklan - Radio USM JAYA FM</h3>
+      <button class="close" id="pricelistClose" aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <p class="pricelist-intro">Promosikan bisnis Anda di Radio USM JAYA FM dengan jangkauan luas di Semarang dan sekitarnya</p>
+      <div id="pricingContainer" class="pricing-grid">
+        <!-- Pricing items will be rendered here when the button is clicked -->
+      </div>
+      <div class="contact-promo" style="margin-top:16px;text-align:center;">
+        <p><strong>💬 Hubungi Kami untuk Informasi Lebih Lanjut</strong></p>
+        <p>Email: <a href="mailto:USMJAYAFM@gmail.com">USMJAYAFM@gmail.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/628112921016" target="_blank">+62 811-2921-016</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section">
+<div class="app">
+</div>
+ <!-- App Card Section -->
+  <div id="appsList" class="app-card-container" style="display:none;">
+    <div class="box">
+    <div class="app-card">
+      <div class="app-header">
+        <img src="assets/Logo Radio USM.jpeg" alt="USM Jaya FM App Icon" class="app-icon">
+        <div class="app-info">
+          <h3>USM JAYA FM</h3>
+          <p class="app-subtitle">Tujuhcahaya</p>
+        </div>
+      </div>
+      
+      <div class="app-description">
+        <p>USM Jaya FM memiliki Aplikasi USM Jaya FM yang bisa di download di Google Play. Selain bisa mendengarkan siaran melalui streaming, dan live chat, di aplikasi USM jaya FM juga terdapat portal berita tentang kegiatan-kegiatan di USM dan mendengarkan Podcast.</p>
+      </div>
+
+      <div class="app-features">
+      </div>
+
+      <div class="app-download-banner">
+        <a href="https://play.google.com/store/apps/details?id=com.usm.jaya" target="_blank">
+          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="badge-img">
+        </a>
+        <a href="https://apps.apple.com/id/app/usm-jaya-fm/id1234567890" target="_blank">
+        </a>
+      </div>
+    </div>
+    </div>
+
+    <div class='box'>
+    <!-- NOICE App Card -->
+    <div class="app-card">
+      <div class="app-header">
+        <img src="assets/noice.jpeg" alt="NOICE App Logo" class="app-icon">
+        <div class="app-info">
+          <h3>NOICE: Podcast, Film & Radio</h3>
+          <p class="app-subtitle">PT Mahaka Radio Digital</p>
+        </div>
+      </div>
+      
+      <div class="app-description">
+        <p>Siaran dan Podcast USM Jaya FM dapat didengarkan melalui aplikasi Noice, yang bisa di download di Google Play dan App Store. Noice adalah platform streaming podcast dan radio terlengkap di Indonesia.</p>
+      </div>
+
+
+      <div class="app-download-banner">
+        <a href="https://play.google.com/store/apps/details?id=noice.app" target="_blank">
+          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="badge-img">
+        </a>
+        <a href="https://apps.apple.com/id/app/noice-podcast-film-radio/id1484372791" target="_blank">
+        <img src="assets/badge app store.jpg" alt="Apple logo next to the text Download on the App Store in white on a black rounded rectangle, promoting app download with a clean and inviting tone" class="badge-img">
+        </a>
+      </div>
+    </div>
+    </div>
+
+    <div class='box'>
+    <!-- RCTI+ App Card -->
+    <div class="app-card">
+      <div class="app-header">
+        <img src="assets/rcti.jpeg" alt="RCTI+ App Logo" class="app-icon">
+        <div class="app-info">
+          <h3>RCTI+ Superapp</h3>
+          <p class="app-subtitle">PT MNC DIGITAL INDONESIA</p>
+        </div>
+      </div>
+      
+      <div class="app-description">
+        <p>Siaran dan Podcast USM Jaya FM dapat didengarkan melalui aplikasi RCTI+, yang bisa di download di Google Play dan App Store. RCTI+ adalah superapp dengan konten entertainment, news, dan radio terlengkap.</p>
+      </div>
+
+
+      <div class="app-download-banner">
+        <a href="https://play.google.com/store/apps/details?id=com.fta.rctitv" target="_blank">
+          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="badge-img">
+        </a>
+        <a href="https://apps.apple.com/id/app/rcti-superapp/id1472168599" target="_blank">
+          <img src="assets/badge app store.jpg" alt="Download on the App Store" class="badge-img">
+        </a>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Streaming Modal -->
+  <div id="streamModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="streamTitle">
+      <div class="modal-header">
+        <h3 id="streamTitle">Streaming - Radio USM Jaya FM</h3>
+        <button class="close" id="streamClose" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body">
+        <p>Anda dapat memutar siaran langsung di bawah ini, atau buka link streaming di tab baru.</p>
+        <audio id="streamAudio" class="audio-player" controls preload="none">
+          <source src="https://stream.yourstream.com/stream" type="audio/mpeg">
+          Browser Anda tidak mendukung pemutar audio. <a id="streamLink" href="https://stream.yourstream.com/stream" target="_blank" rel="noopener">Buka siaran langsung</a>
+        </audio>
+        <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end;">
+          <a id="openStreamNew" class="stream-btn" href="https://stream.yourstream.com/stream" target="_blank" rel="noopener">Buka di Tab Baru</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  // Streaming modal behavior
+  const streamBtn = document.getElementById('stream-btn');
+  const modal = document.getElementById('streamModal');
+  const closeBtn = document.getElementById('streamClose');
+  const audio = document.getElementById('streamAudio');
+  const streamLink = document.getElementById('streamLink');
+  const openNew = document.getElementById('openStreamNew');
+
+  function openModal(streamUrl){
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    if(audio){
+      // set src if not set
+      if(!audio.querySelector('source').src.includes(streamUrl)){
+        audio.querySelector('source').src = streamUrl;
+        audio.load();
+      }
+    }
+  }
+
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    try{ audio.pause(); }catch(e){}
+  }
+
+  streamBtn && streamBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    const url = this.dataset.stream || this.getAttribute('href');
+    openModal(url);
+  });
+
+  // Add event listener for hero streaming button
+  const streamBtnHero = document.getElementById('stream-btn-hero');
+  streamBtnHero && streamBtnHero.addEventListener('click', function(e){
+    e.preventDefault();
+    const url = this.dataset.stream || this.getAttribute('href');
+    openModal(url);
+  });
+
+  closeBtn && closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+
+  // ensure links use the dataset stream as href
+  if(streamBtn){
+    const s = streamBtn.dataset.stream;
+    if(openNew) openNew.href = s;
+    if(streamLink) streamLink.href = s;
+  }
+  </script>
+
+  <script>
+  // Pricelist modal behavior
+  const openPricelistBtn = document.getElementById('openPricelist');
+  const pricelistModal = document.getElementById('pricelistModal');
+  const pricelistClose = document.getElementById('pricelistClose');
+
+  // Price data with multiple options per package
+  const pricingData = [
+    {
+      header: 'LOOSE SPORT / ADLIB PRIME TIME',
+      options: [
+        { duration: '30-45 Detik', price: 'Rp 250.000', desc: '' },
+        { duration: '60 Detik', price: 'Rp 400.000', desc: '' }
+      ]
+    },
+    {
+      header: 'LOOSE SPORT / ADLIB REGULAR TIME',
+      options: [
+        { duration: '30-45 Detik', price: 'Rp 150.000', desc: '' },
+        { duration: '60 Detik', price: 'Rp 300.000', desc: '' }
+      ]
+    },
+    {
+      header: 'TIME SIGNAL',
+      options: [
+        { duration: 'Menit-1', price: 'Rp 400.000', desc: '' },
+        { duration: 'Menit-2', price: 'Rp 350.000', desc: '' },
+        { duration: 'Menit-3', price: 'Rp 200.000', desc: '' }
+      ]
+    },
+    {
+      header: 'INSERT / LIVE REPORT',
+      options: [
+        { duration: '5 Menit', price: 'Rp 1.500.000', desc: '' },
+        { duration: '10 Menit', price: 'Rp 2.500.000', desc: '' }
+      ]
+    },
+    {
+      header: 'SOSMED',
+      options: [
+        { duration: '1 Kali Tayang', price: 'Rp 250.000', desc: '' }
+      ]
+    },
+    {
+      header: 'TALKSHOW / SPONSORSHIP',
+      options: [
+        { duration: '60 Menit', price: 'Rp 5.500.000', desc: '' }
+      ]
+    }
+  ];
+
+  function renderPricing(){
+    const container = document.getElementById('pricingContainer');
+    if(!container) return;
+    if(container.children.length) return; // already rendered
+    container.innerHTML = pricingData.map((p, idx) => `
+      <div class="price-card">
+        <div class="price-header">${p.header}</div>
+        <div class="price-options">
+          ${p.options.map((opt, optIdx) => `
+            <label class="price-option">
+              <input type="radio" name="option-${idx}" value="${opt.price}" ${optIdx === 0 ? 'checked' : ''}>
+              <span class="option-duration">${opt.duration}</span>
+              <span class="option-price">${opt.price}</span>
+              <span class="option-desc">${opt.desc}</span>
+            </label>
+          `).join('')}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  if(openPricelistBtn && pricelistModal){
+    openPricelistBtn.addEventListener('click', function(){
+      renderPricing();
+      pricelistModal.classList.add('open');
+      pricelistModal.setAttribute('aria-hidden','false');
+    });
+  }
+
+  if(pricelistClose){
+    pricelistClose.addEventListener('click', function(){
+      pricelistModal.classList.remove('open');
+      pricelistModal.setAttribute('aria-hidden','true');
+    });
+  }
+
+  if(pricelistModal){
+    pricelistModal.addEventListener('click', function(e){ if(e.target === pricelistModal){ pricelistModal.classList.remove('open'); pricelistModal.setAttribute('aria-hidden','true'); } });
+  }
+  </script>
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function(){
+    const openAppsBtn = document.getElementById('openAppsTrigger');
+    const appsList = document.getElementById('appsList');
+    if(openAppsBtn && appsList){
+      openAppsBtn.addEventListener('click', function(){
+        const isHidden = getComputedStyle(appsList).display === 'none';
+        appsList.style.display = isHidden ? '' : 'none';
+        openAppsBtn.textContent = isHidden ? 'Tutup Daftar Aplikasi' : 'Daftar Aplikasi';
+      });
+    }
+  });
+  </script>
+</div>
+<div class="footer">
+  <div>© 2026 Radio USM JAYA FM</div>
+  <div class="socials">
+    <a href="mailto:info@yourdomain.com" target="_blank" rel="noopener">
+      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email">
+    </a>
+    <a href="https://instagram.com/yourpage" target="_blank" rel="noopener">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+    <a href="https://www.google.com/maps/place/Your+Location/" target="_blank" rel="noopener">
+      <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location">
+    </a>
+  </div>
+</div>
+</body>
+</html>
